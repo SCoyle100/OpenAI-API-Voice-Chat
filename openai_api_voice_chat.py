@@ -13,10 +13,6 @@ from elevenlabs import set_api_key, generate, play, stream
 set_api_key("enter_here")
 
 
-def speak(text):
-    audio = generate(text=text, voice="Dorothy", model="eleven_multilingual_v1")
-    stream(audio)
-
 whileWaiting = "Ok! Give me a few seconds to look into that."
 whileWaiting2 = "Sorry, it's taking just a little longer than expected"
 
