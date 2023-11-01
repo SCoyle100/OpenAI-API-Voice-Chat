@@ -4,7 +4,7 @@ This repository contains a Python script that establishes a conversational assis
 
 ## Dependencies
 
-- 'elevenlabs'
+- `elevenlabs`
 - `speech_recognition`
 - `wave`
 - `langchain`
@@ -50,4 +50,4 @@ If you'd like to contribute, please fork the repository, make your changes, and 
 
 This project is under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
-For more information or queries, please raise an issue or get in touch with the repository owner.
+
