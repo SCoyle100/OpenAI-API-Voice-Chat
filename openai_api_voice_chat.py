@@ -14,7 +14,7 @@ set_api_key("enter_here")
 
 
 whileWaiting = "Ok! Give me a few seconds to look into that."
-whileWaiting2 = "Sorry, it's taking just a little longer than expected"
+whileWaiting2 = "Almost there.  Bear with me."
 
 
 def record_audio():
@@ -45,11 +45,19 @@ def record_audio():
     
 
 def transcribe_forever(audio_file_path):
+    # Convert whileWaiting text to audio and play it
+    audio_data = generate(
+        text=whileWaiting,
+        voice="Dorothy",  # Or any other voice
+        model="eleven_multilingual_v1"  # Or any other model
+    )
+    play(audio_data)
+    
+    # Start transcription
     with open(audio_file_path, "rb") as audio_file:
         result = openai.Audio.transcribe("whisper-1", audio_file)
     predicted_text = result["text"]
     return predicted_text
-
 
 
 
@@ -123,11 +131,11 @@ while True:
     if prompt:
           # Convert text to audio
         audio_data = generate(
-            text=whileWaiting,
+            text=whileWaiting2,
             voice="Dorothy",  # Or any other voice
             model="eleven_multilingual_v1"  # Or any other model
         )
-        # Stream the audio data
+    
         play(audio_data)
 
         if first_prompt:
